@@ -2,7 +2,36 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Requirements
+
+To store data locally, you have to start a PostgreSQL Server that will store the data. 
+
+You can either run one locally in any way you like or you utilise the Docker Compose-File that's present in this project.
+For that, please start the container:
+
+```bash
+# In daemon mode
+docker-compose up -d
+
+# Directly in your terminal
+docker-compose up
+```
+
+Afterwards, you have to provide some information on how to connect to the PostgreSQL Database. For this, you can create
+a `.env` file which will be automatically ingested by the application. 
+
+The following would be sufficient content for that file if you use the docker-compose file:
+
+```shell
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/holi?schema=public"
+```
+
+You can also use any other means to provide this information, but it is required by NextJS to configure the 
+database connectivity.
+
+### Running the DEV-Server
+
+After you have provided the environment configuration, you can start the development server:
 
 ```bash
 npm run dev
@@ -11,12 +40,6 @@ yarn dev
 # or
 pnpm dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
