@@ -29,17 +29,31 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5432/holi?schema=public"
 You can also use any other means to provide this information, but it is required by NextJS to configure the 
 database connectivity.
 
+### Running the migration step
+
+To setup your local development environment with some example projects, you can run the database migration skript:
+
+```shell
+npx prisma db seed
+```
+
 ### Running the DEV-Server
 
 After you have provided the environment configuration, you can start the development server:
 
-```bash
+```shell
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
 ```
+
+### Interact with the API
+
+You can use the Postman Collection to import a set of API Calls to interact with the Backend. You can find it in the 
+`testing`-Folder, ready for importing into Postman or any other compatible API Client.
+
 
 ## Learn More
 
