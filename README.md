@@ -34,6 +34,7 @@ database connectivity.
 To setup your local development environment with some example projects, you can run the database migration skript:
 
 ```shell
+npx prisma migrate dev
 npx prisma db seed
 ```
 
